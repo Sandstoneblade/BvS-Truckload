@@ -1,0 +1,28 @@
+// ==UserScript==
+// @name        Truckload (auto normal load)
+// @namespace   none
+// @version     1
+// @grant       none
+// @include		http://www.animecubed.com/billy/bvs/truckload.html
+// ==/UserScript==
+window.addEventListener("keyup", key_press, false);				//When a key is released, run function key_press and provide it with keyID.
+
+function key_press(event)
+{
+ if (event.keyCode==68)							//keypress d
+	{
+    dostuff(); 
+  }
+}
+
+function blah() {
+	var target = document.querySelector('loadtruck1');
+  target.checked = true;
+}
+
+function dostuff(){
+  window.removeEventListener("keyup", key_press, false);
+  location.assign('javascript:document.truckload.submit()');
+}
+
+blah();
